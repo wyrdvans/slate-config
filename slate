@@ -1,0 +1,28 @@
+config keyboardLayout "dvorak"
+
+# Monitor Aliases
+alias mon-home-laptop 1280x800
+
+# Size Aliases
+alias halfX screenSizeX/2
+alias halfY screenSizeY/2
+alias fullScreen screenSizeX;screenSizeY
+alias quarterScreen ${halfX};${halfY}
+alias halfScreenX ${halfX};screenSizeY
+alias halfScreenY screenSizeX;${halfY}
+
+# Bindings
+alias halfModifier ctrl;alt;cmd
+alias quarterModifier ctrl;alt;shift
+# - Half Bindings
+bind up:${halfModifier} corner top-left resize:${halfScreenY}
+bind down:${halfModifier} corner bottom-left resize:${halfScreenY}
+bind left:${halfModifier} corner top-left resize:${halfScreenX}
+bind right:${halfModifier} corner top-right resize:${halfScreenX}
+# - Quarter Bindings
+bind up:${quarterModifier} corner top-left resize:${quarterScreen}
+bind down:${quarterModifier} corner bottom-right resize:${quarterScreen}
+bind left:${quarterModifier} corner bottom-left resize:${quarterScreen}
+bind right:${quarterModifier} corner top-right resize:${quarterScreen}
+# - Full Screen
+bind up:cmd;ctrl corner top-left fullScreen
